@@ -1,8 +1,16 @@
-<h3>Directivas estructurales</h3>
+<h1>LISTADO DE ALUMNOS DE LA COMISION 43234 DE INGLES Y LENGUA</h1>
 
-<ul>
-    <li *ngFor="let estudiante of estudiantes">
+<ul [ngClass]="'lista'">
+    <li *ngFor="let estudiante of estudiantes" [style.color]="estudiante.nota > 4 ? 'green' : 'red'"
+                                               [style.border]="estudiante.materia === 'Ingles' ? '1px solid blue' : '1px solid yellow'" >
         {{ estudiante.nombre }}
-        {{ estudiante.apellido }}        
+        {{ estudiante.apellido | uppercase }}    
+        - Nota: {{ estudiante.nota | number: '1.0-0' }} 
+        - Edad: {{ estudiante.edad }}   
     </li>
 </ul>
+
+<h2>Comentarios:</h2>
+<h2>- Los alumnos aprobados estan escritos en verde y los desaprobados en rojo. A partir de 4 inclusive se aprueba</h2>
+<h2>- Los alumnos de ingles tienen un recuadro azul, mientras que los de lengua tienen un recuadro amarillo</h2>
+<h2>- Las notas han sido redondeadas para facilitar su lectura</h2>

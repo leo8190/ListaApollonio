@@ -2,7 +2,8 @@
 
 <ul [ngClass]="'lista'">
     <li *ngFor="let estudiante of estudiantes" [style.color]="estudiante.nota > 4 ? 'green' : 'red'"
-                                               [style.border]="estudiante.materia === 'Ingles' ? '1px solid blue' : '1px solid yellow'" >
+                                        [style.border]="estudiante.materia === 'Ingles' ? '3px solid blue' : '3px solid yellow'" 
+                                        [style.margin]="4">
         {{ estudiante.nombre }}
         {{ estudiante.apellido | uppercase }}    
         - Nota: {{ estudiante.nota | number: '1.0-0' }} 
